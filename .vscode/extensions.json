@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "octref.vetur",
+    "bradlc.vscode-tailwindcss",
+    "heybourn.headwind",
+    "esbenp.prettier-vscode"
+  ]
+}
