@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   public loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
@@ -20,6 +20,4 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {}
 }

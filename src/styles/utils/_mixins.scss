@@ -5,9 +5,7 @@
     @media screen and (min-width: map-get($breakpoints, $media)) {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @error 'The only sizes allowed are: sm, md, lg, xl, 2xl';
   }
 }
