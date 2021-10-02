@@ -2,8 +2,8 @@
 
 .back {
   width: 100%;
-  min-height: 100vh;
   display: grid;
+  min-height: 100vh;
   place-items: center;
 
   .login {
@@ -16,36 +16,50 @@
     @media screen and (min-width: 382px) {
       border-radius: 6px;
     }
-  }
 
-  header {
-    padding-bottom: $size-5xl;
-  }
-
-  .logo {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .slogan {
-    font-size: $size-xs;
-  }
-
-  .inputs {
-    display: grid;
-    row-gap: $size-2xl;
-    padding-bottom: $size-2xl;
-
-    input {
-      width: 100%;
+    header {
+      padding-bottom: $size-5xl;
     }
-  }
 
-  .options {
-    display: grid;
-    font-size: $size-xs;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-columns: repeat(2, fit-content(100%));
+    .logo {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .slogan {
+      font-size: $size-xs;
+    }
+
+    i {
+      cursor: pointer;
+    }
+
+    .inputs {
+      display: grid;
+      row-gap: $size-2xl;
+      padding-bottom: $size-2xl;
+
+      input,
+      .input span {
+        width: 100%;
+        font-size: $size-sm;
+      }
+
+      .error {
+        display: block;
+        padding-top: 4px;
+        text-align: left;
+        color: $danger;
+        font-size: $size-xs;
+      }
+    }
+
+    .options {
+      display: grid;
+      font-size: $size-xs;
+      align-items: center;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, fit-content(100%));
+    }
   }
 }

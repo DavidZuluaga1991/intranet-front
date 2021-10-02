@@ -1,19 +1,36 @@
+<p-toast [baseZIndex]="5000"></p-toast>
 <div class="back">
-  <form [formGroup]="loginForm" class="login">
+  <form [formGroup]="loginForm" class="login" (ngSubmit)="onSubmit()">
     <header>
       <img class="logo" src="assets/images/code_society.png" title="Code Society" alt="Code Society" />
       <span class="slogan">Sin miedo al éxito</span>
     </header>
     <section class="inputs">
-      <input type="text" pInputText class="form-control" placeholder="Ingrese correo" formControlName="username" />
-      <span class="p-input-icon-right">
-        <i class="pi pi-eye"></i>
-        <input type="password" pInputText class="form-control" placeholder="Contraseña" formControlName="password" />
-      </span>
+      <div class="input">
+        <input type="text" pInputText class="form-control" placeholder="Ingrese correo" formControlName="username" />
+        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+          <small *ngIf="username?.errors" class="error">El correo ingresado no cumple con el formato</small>
+        </div>
+      </div>
+      <div class="input">
+        <span class="p-input-icon-right">
+          <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'" (click)="togglePassword()"></i>
+          <input [type]="showPassword ? 'text' : 'password'" pInputText class="form-control" placeholder="Contraseña" formControlName="password" />
+        </span>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <small *ngIf="password?.errors" class="error">La contraseña es necesaria</small>
+        </div>
+      </div>
     </section>
     <section class="options">
       <span>¿Olvidaste tu contraseña?</span>
-      <p-button label="Iniciar sesión"></p-button>
+      <p-button 
+        type="submit"
+        [disabled]="!loginForm.valid || loginInProgress"
+        [icon]="loginInProgress ? 'pi pi-spin pi-spinner' : ''"
+        [label]="loginInProgress ? 'Procesando' : 'Iniciar sesión'"
+        [style.cursor]="(!loginForm.valid || loginInProgress) && 'not-allowed'">
+      </p-button>
     </section>
   </form>
 </div>

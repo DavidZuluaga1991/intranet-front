@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../utils' as *;
 
-*,
+*:not(.p-toast-message-content),
 :after,
 :before {
   box-sizing: border-box;
