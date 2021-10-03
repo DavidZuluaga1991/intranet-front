@@ -83,6 +83,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           clearInterval(countDownInterval);
           this.isBlocked = false;
           this.submitText = 'Iniciar sesión';
+          this.authService.resetRemainingAttempts();
           window.localStorage.removeItem('cs-block');
         }
       }, 1000);

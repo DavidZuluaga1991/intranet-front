@@ -24,4 +24,8 @@ export class AuthService {
   public getRemainingAttempts$(): Observable<number> {
     return this.failedAttempts.asObservable();
   }
+
+  public resetRemainingAttempts(): void {
+    return this.failedAttempts.next(5);
+  }
 }
