@@ -22,12 +22,13 @@
     }
 
     .logo {
+      user-select: none;
       margin-left: auto;
       margin-right: auto;
     }
 
     .slogan {
-      font-size: $size-xs;
+      font-size: $size-sm;
     }
 
     i {
@@ -42,7 +43,6 @@
       input,
       .input span {
         width: 100%;
-        font-size: $size-sm;
       }
 
       .error {
