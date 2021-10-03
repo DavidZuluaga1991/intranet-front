@@ -26,9 +26,10 @@
       <span>¿Olvidaste tu contraseña?</span>
       <p-button 
         type="submit"
-        [disabled]="!loginForm.valid || loginInProgress"
+        [label]="submitText"
+        [pTooltip]="isBlocked ? 'Bloqueado' : ''"
         [icon]="loginInProgress ? 'pi pi-spin pi-spinner' : ''"
-        [label]="loginInProgress ? 'Procesando' : 'Iniciar sesión'"
+        [disabled]="!loginForm.valid || loginInProgress || isBlocked"
         [style.cursor]="(!loginForm.valid || loginInProgress) && 'not-allowed'">
       </p-button>
     </section>

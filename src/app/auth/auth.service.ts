@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
+  private readonly failedAttempts = new BehaviorSubject<number>(5);
+
   constructor() {}
 
   public login(data: { username: string; password: string }): Promise<{ ok: boolean; message: string }> {
@@ -10,9 +13,15 @@ export class AuthService {
 
     return new Promise(resolve => {
       setTimeout(() => {
-        if (isUndefined) resolve({ ok: false, message: 'Credenciales incorrectas' });
-        else resolve({ ok: true, message: '¡Bienvenido!' });
+        if (isUndefined) {
+          this.failedAttempts.next(<number>this.failedAttempts.getValue() - 1);
+          resolve({ ok: false, message: 'Credenciales incorrectas' });
+        } else resolve({ ok: true, message: '¡Bienvenido!' });
       }, defer);
     });
+  }
+
+  public getRemainingAttempts$(): Observable<number> {
+    return this.failedAttempts.asObservable();
   }
 }

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { TooltipModule } from 'primeng/tooltip';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { AuthService } from './auth.service';
@@ -20,6 +21,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     AuthRoutingModule,
     ToastModule,
+    TooltipModule,
     InputTextModule,
     ButtonModule,
     RippleModule,
