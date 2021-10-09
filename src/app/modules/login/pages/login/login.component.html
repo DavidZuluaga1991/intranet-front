@@ -15,7 +15,13 @@
       <div class="input">
         <span class="p-input-icon-right">
           <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'" (click)="togglePassword()"></i>
-          <input [type]="showPassword ? 'text' : 'password'" pInputText class="form-control" placeholder="Contraseña" formControlName="password" />
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            pInputText
+            class="form-control"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
         </span>
         <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
           <small *ngIf="password?.errors" class="error">La contraseña es necesaria</small>
@@ -24,13 +30,14 @@
     </section>
     <section class="options">
       <span>¿Olvidaste tu contraseña?</span>
-      <p-button 
+      <p-button
         type="submit"
         [label]="submitText"
         [pTooltip]="isBlocked ? 'Bloqueado' : ''"
         [icon]="loginInProgress ? 'pi pi-spin pi-spinner' : ''"
         [disabled]="!loginForm.valid || loginInProgress || isBlocked"
-        [style.cursor]="(!loginForm.valid || loginInProgress) && 'not-allowed'">
+        [style.cursor]="(!loginForm.valid || loginInProgress) && 'not-allowed'"
+      >
       </p-button>
     </section>
   </form>

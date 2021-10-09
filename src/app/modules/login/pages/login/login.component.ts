@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
-import { AuthService } from '../auth.service';
+import { LoginService } from 'src/app/core/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly authService: AuthService,
+    private readonly authService: LoginService,
     private readonly messageService: MessageService,
   ) {}
 

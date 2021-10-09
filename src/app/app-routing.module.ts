@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './shared/component/layout/layout.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./auth/auth.module').then(module => module.AuthModule),
+  // },
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   redirectTo: '',
+  // },
   {
     path: '',
-    loadChildren: () => import('./auth/auth.module').then(module => module.AuthModule),
+    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule),
   },
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'login',
+    path: 'home',
+    component: LayoutComponent,
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
   },
 ];
 
