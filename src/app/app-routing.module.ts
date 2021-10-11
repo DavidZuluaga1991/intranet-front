@@ -5,10 +5,6 @@ import { LayoutComponent } from './shared/component/layout/layout.component';
 const routes: Routes = [
   // {
   //   path: '',
-  //   loadChildren: () => import('./auth/auth.module').then(module => module.AuthModule),
-  // },
-  // {
-  //   path: '',
   //   pathMatch: 'full',
   //   redirectTo: '',
   // },
@@ -18,6 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    data: { breadcrumb: 'Inicio' },
     component: LayoutComponent,
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
   },

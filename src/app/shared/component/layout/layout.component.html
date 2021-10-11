@@ -1,2 +1,18 @@
-<p>layout works!</p>
-<router-outlet></router-outlet>
+<!-- <p>layout works!</p>
+<router-outlet></router-outlet> -->
+<div class="layout">
+  <div class="layout__menu">
+    <div class="layout__menu__img">
+      <img src="./../../../../assets/images/code_society.png" alt="{{ home.label }}" [routerLink]="[home.routerLink]" />
+    </div>
+    <p-panelMenu [model]="items" [style]="{ width: '100%' }" [multiple]="true"></p-panelMenu>
+  </div>
+  <div class="layout__container">
+    <div class="layout__container__header">
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+    <div class="layout__container__content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

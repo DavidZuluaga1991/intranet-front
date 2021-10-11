@@ -12,7 +12,13 @@ const routes: Routes = [
       },
       {
         path: 'manintenance',
+        data: { breadcrumb: 'Mantenimiento' },
         loadChildren: () => import('./pages/manintenance/manintenance.module').then(m => m.ManintenanceModule),
+      },
+      {
+        path: 'projects',
+        data: { breadcrumb: 'Proyectos' },
+        loadChildren: () => import('./pages/projects/projects.module').then(m => m.ProjectsModule),
       },
     ],
   },

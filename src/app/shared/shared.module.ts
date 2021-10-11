@@ -8,10 +8,16 @@ import { RippleModule } from 'primeng/ripple';
 import { CoreModule } from '../core/core.module';
 import { LayoutComponent } from './component/layout/layout.component';
 import { RouterModule } from '@angular/router';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
+import { CardsCustomComponent } from './component/cards-custom/cards-custom.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [LayoutComponent],
+  declarations: [LayoutComponent, BreadcrumbComponent, CardsCustomComponent],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     FormsModule,
     ToastModule,
@@ -21,6 +27,8 @@ import { RouterModule } from '@angular/router';
     RippleModule,
     CoreModule,
     RouterModule,
+    PanelMenuModule,
+    BreadcrumbModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -33,6 +41,7 @@ import { RouterModule } from '@angular/router';
     CoreModule,
     RouterModule,
     LayoutComponent,
+    CardsCustomComponent,
   ],
 })
 export class SharedModule {}
