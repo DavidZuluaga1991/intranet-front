@@ -1,0 +1,20 @@
+<div class="new_profile">
+  <p class="new_profile__title">
+    Nuevo Registro
+  </p>
+  <div class="new_profile__container">
+    <div class="new_profile__container__data">
+      <input type="text" pInputText placeholder="Codigo">
+      <input type="text" pInputText placeholder="Nombre">
+      <p-inputSwitch></p-inputSwitch>
+    </div>
+    <div class="new_profile__container__content">
+      <div class="permiss">
+        <p-tree [value]="files" selectionMode="checkbox" [(selection)]="selectedFiles2"></p-tree>
+      </div>
+    </div>
+  </div>
+  <div class="new_profile__actions">
+    <button pButton pRipple type="button" class="p-button-raised">Guardar</button>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="cards">
+  <div class="cards__card" *ngFor="let item of cards" [routerLink]="item.routerLink">
+    <p class="cards__card__text">
+      {{ item.label }}
+    </p>
+  </div>
+</div>

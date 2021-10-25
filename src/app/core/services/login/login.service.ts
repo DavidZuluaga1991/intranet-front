@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable()
-export class AuthService {
+@Injectable({
+  providedIn: 'root',
+})
+export class LoginService {
   private readonly failedAttempts = new BehaviorSubject<number>(5);
 
   constructor() {}
