@@ -10,6 +10,11 @@ const routes: Routes = [
         path: '',
         component: ManintenanceComponent,
       },
+      {
+        path: 'profile',
+        data: { breadcrumb: 'Perfil' },
+        loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule),
+      },
     ],
   },
 ];

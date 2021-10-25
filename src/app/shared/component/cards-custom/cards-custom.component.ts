@@ -7,7 +7,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./cards-custom.component.scss'],
 })
 export class CardsCustomComponent implements OnInit {
-  @Input() cards: MenuItem[] = [];
+  @Input() cards: MenuItem[] | undefined = [];
 
   constructor() {}
 

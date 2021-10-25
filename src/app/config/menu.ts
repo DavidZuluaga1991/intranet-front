@@ -23,6 +23,18 @@ export const menu: MenuItem[] = [
             id: '112',
             label: 'Perfil',
             routerLink: '/home/manintenance/profile',
+            items: [
+              {
+                id: '1121',
+                label: 'Nuevo',
+                routerLink: '/home/manintenance/profile/new',
+              },
+              {
+                id: '1122',
+                label: 'Editar',
+                routerLink: '/home/manintenance/profile/new',
+              },
+            ],
           },
           {
             id: '113',
